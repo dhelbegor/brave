@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+django-debug-toolbar = "*"
+remote-pdb = "*"
+
+[packages]
+django = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
+python-decouple = "*"
+dj-database-url = "*"
+django-extensions = "*"
