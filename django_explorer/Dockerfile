@@ -13,7 +13,7 @@ COPY ./Pipfile ./Pipfile
 
 RUN pipenv install
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["pipenv", "run", "./manage.py", "runserver", "0.0.0.0:8000"]
 
 EXPOSE 8000/tcp
 

@@ -10,7 +10,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    command: "sleep_infinity"
     networks:
       - webnet
     depends_on:
