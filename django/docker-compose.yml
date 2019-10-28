@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  web:
+    container_name: web
+    volumes:
+      - .:/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - webnet
+    depends_on:
+      - db
+    environment:
+      - PYTHONUNBUFFERED=1
+  db:
+    container_name: db
+    image: postgres:10-alpine
+    ports:
+      - "15432:5432"
+    networks:
+      - webnet
+    environment:
+      POSTGRES_USER: django_explorer
+      POSTGRES_PASSWORD: 123db4
+      POSTGRES_DB: django_explorer
+networks:
+  webnet:
